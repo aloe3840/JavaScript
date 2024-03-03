@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    
+    #top-logo{
+      padding: 8px;
+    }
+
+    .top-nav li{
+      display: inline-block;
+      padding: 8px;
+      margin-right: 5px;
+    }
+
+    .top nav ul{
+      justify-content: space-between;
+    }
+
+    .top-nav{
+      display: flex;
+      background-color: lightgrey;
+      justify-content: space-between;
+    }
+    
+    .bottom-nav{
+      background-color: black;
+      width: 100%;
+      height: 0;
+      display: flex;   
+      visibility: hidden;
+      z-index: 5;
+    }
+    
+    .coffee{
+      color: white;
+      margin: 10px;
+    }
+    
+    .latte{
+      color: white;
+      margin: 10px;
+    }
+    
+    .coffee li,
+    .latte li{
+      list-style-type: none;
+    }
+
+    .bottom-nav ul{
+      padding-left: 0;
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <h2 id="top-logo">로고</h2>
+    <ul>
+      <li>커피</li>
+      <li>라떼</li>
+      <li>주스</li>
+      <li>티</li>
+    </ul>
+  </div>
+  <div class="bottom-nav" id="bottom-nav">
+    <div class="coffee">
+      <h3>커피</h3>
+      <ul>
+        <li>아메리카노</li>
+        <li>콜드브루</li>
+      </ul>
+    </div>
+
+    <div class="latte">
+      <h3>라떼</h3>
+      <ul>
+        <li>카페라떼</li>
+        <li>콜드브루라떼</li>
+      </ul>
+    </div>  
+  </div>
+
+  <script>
+    var down_nav = 0
+    document.getElementById('top-logo').addEventListener('click', function(){
+      if(down_nav === 0){
+        down_nav = 1
+        document.getElementById('bottom-nav').style.height='auto'
+        document.getElementById('bottom-nav').style.visibility = 'visible'
+      } else if(down_nav === 1){
+        down_nav = 0
+        document.getElementById('bottom-nav').style.height='0'
+        document.getElementById('bottom-nav').style.visibility = 'hidden'
+      }
+    })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+</head>
+<body>
+  <script>
+    //변수: 값을 저장하는 공간
+    var 공간이름 = '값'
+    //공간을 처음 생성할 때는 var, let, const를 앞에 넣어준다
+    //이미 만들어진 공간은 이름만 적어준다
+    공간이름
+
+    //변수의 type 
+    var 정수 = 3  //숫자 
+    var 실수 = 4.1  //소수점 있는 숫자
+    var 문자열 = '데이터값' //글자
+    var 불린 = true  //참거짓
+
+    //조건: 어떤 코드가 실행되게할지 선택
+    //if(){}
+    if(true){
+      console.log("()안에 true 들어가면 실행할 코드")
+    }
+
+    if(false){
+      console.log("이 부분은 무시가 됩니다")
+    }
+
+    console.log(10>3)  //true
+    console.log(10<3)  //false
+    console.log(30>=3)  //true
+    console.log(30<=3)  //flase
+    console.log(30=='30')  //자료형 검사를 못하는 버그
+    console.log(30==='30')  //자료형까지 검사
+    console.log(30 !== '30') 
+
+    //비교하면 true, flase가 나옴
+
+    //소괄호 안에는 true, false
+    //중괄호 안에는 ture일 때 실행할 코드
+
+    var 결과 = 0
+    if(결과 === 0){
+      console.log("결과는 0과 같습니다.")
+    } 
+    if(결과 !== 0){
+      console.log("결과는 0과 같지 않습니다.")
+    }
+    
+    function 큰값검사(num1, num2){
+      if(num1 > num2){
+        return "첫 번째 숫자가 더 큽니다"
+      } else if(num1 < num2){
+        return "두 번째 숫자가 더 큽니다"
+      } else {
+        return "두 수는 같습니다"
+      }
+    }
+    console.log(큰값검사(1, 3))
+
+    결과 = 10
+    
+    if(결과 > 5){
+      console.log("5보다 큽니다")
+    } else if(결과 < 5){
+      console.log("5보다 작습니다")
+    }
+    
+    var 나이 = 25
+    function 성인인가요(나이) {
+      if(나이 >= 20){
+        return "성인입니다"
+      } else{
+        return "미성년자입니다"
+      }
+    }
+    결과 = 성인인가요(나이)
+    console.log(결과)
+    
+    if(true){
+      console.log("if 1번째")
+      if(true){
+        console.log("if 2번째")
+      }
+    }
+    
+    //우리마을 버스요금 5세미만 0원, 5세 이상~14세 미만 500원, 14세 이상~20세 미만 750원, 20~75세 미만 1000원, 75세 이상 0원
+    
+    나이 = 27
+    if(나이 < 5){
+      console.log("요금 0원")
+    } else if(나이 >= 5 && 나이 < 14){
+      console.log("요금 500원")
+    } else if(나이 >= 14 && 나이 < 20){
+      console.log("요금 750원")
+    } else if(나이 >= 20 && 나이 < 75){
+      console.log("요금 1000원")
+    } else if(나이 >= 75){
+      console.log("요금 0원")
+    }
+    
+    //키 130미만 탑승불가, 키 130~190 탑승가능, 키 190초과 탑승불가
+    
+    function 놀이기구(cm){
+      if(cm < 130 || cm > 190){
+        console.log("탑승 불가")
+      } else {
+        console.log("탑승 가능")
+      }
+    }
+    console.log(놀이기구(150))
+    
+
+    function 글자수검사(글자){
+      let 글자수 = 글자.leghth
+      if(글자수 >= 3 && 글자수 < 10){
+        return "맞습니다"
+      } else{
+        return "적절하지 않은 글자수 입니다"
+      }
+    }
+    결과 =글자수검사("안녕하세여, 반갑습니다")
+    console.log(결과)
+    
+  </script>
+</body>
+</html>

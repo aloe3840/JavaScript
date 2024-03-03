@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box-class{
+      background-color: lightblue;
+      padding: 15px;
+      border-radius: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="box-class" id="box-id">
+    <p id="box-text">버튼을 누르면 창이 열립니다</p>
+    <button onclick="상자닫기()">닫기</button>
+  </div>
+  <button onclick="상자열기('아이디를 입력하세요')">열기</button>
+  <button onclick="상자열기('비밀번호를 입력하세요')">열기2</button>
+
+  <script>
+    //변수: var, let, const 값을 저장
+    //함수: function 코드를 저장
+    
+    function 상자닫기(){
+      document.getElementById('box-id').style.display='none'
+    }
+    
+    function 상자열기( 매개변수){
+      document.getElementById('box-text').innerHTML=매개변수
+      document.getElementById('box-id').style.display='block'
+    }
+
+  </script>
+</body>
+</html>
