@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body{
+      margin: 0;
+    }
+
+    .top-nav{
+      border: 2px solid black;
+      padding: 15px;
+    }
+
+    .dark-mod{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .dark-mod button{
+      height: 30px;
+      background-color: black;
+      color: white;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="top-nav" id="top">
+    <div class="dark-mod">
+      <h3>JavaScript</h3>
+      <button onclick="darkMod()" id="dark-btn">다크모드</button>
+    </div>
+    <div class="date" id="dateAlert">
+      <form onsubmit="dateAlert(event)">
+        <p>올해 년도는?</p>
+        <input type="date" id="yearInput">
+        <input type="submit">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    var 모드 = 0
+    document.getElementById('dark-btn').addEventListener('click', function(){
+      모드++
+      if(모드 % 2 == 0){
+        document.getElementById('top').style.backgroundColor = 'black'
+        document.getElementById('top').style.color = 'white'
+        document.getElementById('dark-btn').style.backgroundColor = 'white'
+        document.getElementById('dark-btn').style.color = 'black'
+      } else{
+        document.getElementById('top').style.backgroundColor = 'white'
+        document.getElementById('top').style.color = 'black'
+        document.getElementById('dark-btn').style.backgroundColor = 'black'
+        document.getElementById('dark-btn').style.color = 'white'
+      }
+    })
+
+    function dateAlert(event){
+      event.preventDefault(); 
+      var yearInput = document.getElementById('yearInput').value;
+      var year = new Date(yearInput).getFullYear();
+      if(year === 2024){
+        alert("정답입니다.");
+      } else{
+        alert("정답이 아닙니다.");
+      }
+    }
+  </script>
+</body>
+</html>

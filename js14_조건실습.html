@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건실습</title>
+
+  <style>
+    body{  
+      margin: 0;
+    }
+
+    .header{
+      border: 2px solid lightblue;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 15px;
+    }
+
+    .header h3{
+      padding-right: 25px;
+    }
+
+    .bottom{
+      display: none; /* 초기에는 숨김 */
+      background-color: black;
+      color: #ffffff;
+      z-index: 5;
+      position: fixed;
+      width: 100%;
+      height: 150px;
+    }
+    
+    .bottom li{
+      list-style-type: none;
+    }
+
+    .bottom ul{
+      padding: 0 15px;
+    }
+
+    .back-black{
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      position: fixed; /*전체 화면 기준으로 동작(z-index사용가능)*/
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      top: 0;
+      left: 0;
+      height: 0;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+
+    .back-white{
+      background-color: white;
+      width: 400px;
+      height: 400px;
+      padding: 30px;
+    }
+
+    .back-white input[type="text"],
+    .back-white input[type="password"]{
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /*
+    z-index는 position을 사용하면서 해야함
+    근데 position을 사용하면 화면이 망가져서 보정해줘야함
+    position은 
+    static 기본
+    relative (내 위치를 기준으로)
+    absolute (relative를 갖고있는 부모를 기준으로)
+    fixed (내 화면을 기준으로)
+    sticky (내가 보는 현재화면(스크롤) 기준으로)
+    */
+  </style>
+
+</head>
+<body>
+  <div class="header" id="logo">
+    <h2>로고제목</h2>
+    <h3>항목1, 항목2, 항목3</h3>
+  </div>
+  <div class="bottom" id="bottom-div">
+    <div class="coffee">
+      <h3>Coffee</h3>
+      <ul>
+        <li>아메리카노</li>
+        <li>콜드브루</li>
+      </ul>
+    </div>
+    <div class="latte">
+      <h3>Latte</h3>
+      <ul>
+        <li>콜드브루라떼</li>
+        <li>카페라떼</li>
+      </ul>
+    </div>
+  </div>
+
+  <!--버튼을 클릭하면 doModal() 함수를 사용-->
+  <button onclick="doModal()">새로운 창 열기</button>
+  <div class="back-black">
+    <div class="back-white">
+      <h4>제목</h4>
+      <form>
+        <input type="text" placeholder="아이디를 입력하세요">
+        <input type="password" placeholder="비밀번호를 입력하세요">
+        <!--submit: 백엔드로 전달-->
+        <!--button: 백엔드로 전달 안 할 때-->
+        <input type="submit" value="로그인">
+        <input type="button" value="닫기" onclick="closeModal()">
+      </form>
+    </div>
+  </div>
+  
+
+  <script>
+    var down = false; // 초기 상태는 숨김
+
+    document.getElementById('logo').addEventListener('click', function(){
+      if(down === false){
+        down = true
+        document.getElementById('bottom-div').style.display = 'flex'
+      } else {
+        down = false
+        document.getElementById('bottom-div').style.display = 'none'
+      }
+    })
+
+    document.getElementById('logo').addEventListener('mouseover', function(){
+      document.getElementById('bottom-div').style.display = 'flex'
+    })
+
+    document.getElementById('logo').addEventListener('mouseleave', function(){
+      if(down === false) {
+        document.getElementById('bottom-div').style.display = 'none'
+      }
+    })
+
+    function doModal(){
+      //평소에는 숨겨놓은 창을 보여주게
+      document.querySelector('.back-black').style.visibility = 'visible'
+      document.querySelector('.back-black').style.height = '100%'
+      document.querySelector('.back-black').style.opacity = '100%'
+    }
+
+    function closeModal(){
+      document.querySelector('.back-black').style.visibility = 'hidden'
+      document.querySelector('.back-black').style.height = '0'
+      document.querySelector('.bacl-black').style.opacity = '0'
+    }
+  </script>
+</body>
+</html>

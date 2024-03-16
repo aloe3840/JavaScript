@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 복습</title>
+</head>
+<body>
+  
+<script>
+  function 같은지비교(숫자1, 숫자2){
+    if(숫자1 === 숫자2){
+      return true
+    } else{
+      return false
+    }
+  }
+  //함수 가져올 땐 이름 적고 소괄호
+  //만약  return값이 있다면 변수로 받는다
+  var 함수결과 = 같은지비교(3, 3)
+  console.log(함수결과)
+
+  function 작은값찾기(숫자1, 숫자2){
+    if(숫자1 < 숫자2){
+      return 숫자1
+    } else{
+      return 숫자2
+    }
+  }
+
+  var 작은값결과 = 작은값찾기(5, 9)
+  console.log(작은값결과)
+
+  function 놀이기구키재기(cm){
+    if(cm < 130){
+      return "탑승불가"
+    } else if(cm >= 130 && cm <= 190){
+      return "탑승가능"
+    } else{
+      return "탑승불가"
+    }
+  }
+
+  var 놀이기구탑승여부 = 놀이기구키재기(185)
+  console.log(놀이기구탑승여부)
+</script>
+</body>
+</html>
