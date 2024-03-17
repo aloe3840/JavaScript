@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>탭기능 만들기</title>
+
+  <style>
+    body{
+      margin: 0;
+      display: flex;
+      justify-content: center;  
+    }
+
+    .tap-button li{
+      border: 1px solid black;
+      width: 150px;
+      display: inline-block;
+      height: 35px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .tap-selected{
+      border: 1px solid lightblue;
+      border-top: 2px solid orange;
+      border-bottom: 0 !important;
+    }
+
+    .tap-button ul{
+      margin: 0;
+      font-size: 0;
+      width: 500px;
+      padding: 0;
+    }
+
+    .tap-detail{
+      border: 1px solid black;
+      width: 454px;
+      height: 150px;
+      text-align: center;
+    }
+
+    .display-none{
+      display: none;
+    }
+
+
+    .tap{
+      margin-top: 100px;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="tap">
+    <div class="tap-button">
+      <ul>
+        <li class="button tap-selected">탭1</li>
+        <li class="button">탭2</li>
+        <li class="button">탭3</li>
+      </ul>
+    </div>
+    <div class="tap-detail">
+      <p>탭1의 내용</p>
+    </div>
+    <div class="tap-detail display-none">
+      <p>탭2의 내용</p>
+    </div>
+    <div class="tap-detail display-none">
+      <p>탭3의 내용</p>
+    </div>
+  </div>
+
+
+  <script>
+    var 탭버튼개수 = document.querySelectorAll('.button').length
+
+    for(let 순서=0; 순서<탭버튼개수; 순서++){
+      document.querySelectorAll('.button')[순서].addEventListener('click', function(){
+        for(let i=0; i<탭버튼개수; i++){
+          document.querySelectorAll('.tap-detail')[i].classList.add('display-none')
+          document.querySelectorAll('.button')[i].classList.remove('tap-selected')
+        }
+        document.querySelectorAll('.tap-detail')[순서].classList.remove('display-none')
+        document.querySelectorAll('.button')[순서].classList.add('tap-selected')
+      })
+    }
+
+    // document.querySelectorAll('.button')[0].addEventListener('click', function(){
+    //   for(let i=0; i<3; i++){
+    //     document.querySelectorAll('.tap-detail')[i].classList.add('display-none')
+    //     document.querySelectorAll('.button')[i].classList.remove('tap-selected')
+    //   }
+    //   document.querySelectorAll('.tap-detail')[0].classList.remove('display-none')
+    //   document.querySelectorAll('.button')[0].classList.add('tap-selected')
+    // })
+    
+    // document.querySelectorAll('.button')[1].addEventListener('click', function(){
+    //   for(let i=0; i<3; i++){
+    //     document.querySelectorAll('.tap-detail')[i].classList.add('display-none')
+    //     document.querySelectorAll('.button')[i].classList.remove('tap-selected')
+    //   }
+    //   document.querySelectorAll('.tap-detail')[1].classList.remove('display-none')
+    //   document.querySelectorAll('.button')[1].classList.add('tap-selected')
+    // })
+
+    // document.querySelectorAll('.button')[2].addEventListener('click', function(){
+    //   for(let i=0; i<3; i++){
+    //     document.querySelectorAll('.tap-detail')[i].classList.add('display-none')
+    //     document.querySelectorAll('.button')[i].classList.remove('tap-selected')
+    //   }
+    //   document.querySelectorAll('.tap-detail')[2].classList.remove('display-none')
+    //   document.querySelectorAll('.button')[2].classList.add('tap-selected')
+    // })
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문</title>
+</head>
+<body>
+  <script>
+    //함수는 코드를 재활용하기 위해 (내가 원하는 위치에)
+    //반복문도 비슷한  코드를 재활용 하기 위해 (해당위치에서만 여러번)
+    //while, for, foreach
+
+    console.log('내가 적고 싶은 말')
+    
+    for(let num = 1; num <= 5; num++){
+      console.log(num)
+    }
+    
+    var 숫자배열 = [1, 2, 3, 4, 5]
+    for(let i = 1; i < 5; i++){
+      console.log(숫자배열[i])
+    }
+    
+    for(let i = 1; i <= 10; i++){
+      console.log('Hello World~!')
+    }
+
+    //반복문은 배열이랑 많이 사용
+    //또는 여러 클래스에 동일한 작업을 할 때
+
+    var 배열 = [1, 2, 3.14, 'Hello', true]
+    //배열 안에 있는 요소를 한 번씩 사용하고 싶다 > 반복문 사용
+    for(let i = 0; i <= 배열.length; i++){
+      console.log(배열[i])  
+    }
+    
+
+    
+  </script>
+</body>
+</html>

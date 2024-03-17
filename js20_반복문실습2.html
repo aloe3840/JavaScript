@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>슬라이더</title>
+
+  <style>
+    body{
+      margin: 0;
+    }
+
+    .slider-container{
+      overflow: hidden;
+      width: 600px;
+      height: 400px;
+
+    }
+
+    .slider-img{
+      display: flex;
+      width: 300%;
+      transition: all 1s;
+    }
+
+    .box{
+      width: 100%;
+    }
+
+    .box img{
+      width: 100%;
+    }
+
+    .slider-1{
+      margin-left: 0;
+    }
+
+    .slider-2{
+      margin-left: -100%;
+    }
+
+    .slider-3{
+      margin-left: -200%;
+    }
+  </style>
+
+</head>
+<body>
+  <!--슬라이더 크기를 결정-->
+  <div class="slider-container">
+    <div class="slider-img" id="slider-box">
+
+      <div class="box">
+        <img src="./img/back1.jpg" alt="">
+      </div>
+      <div class="box ">
+        <img src="./img/back2.jpg" alt="">
+      </div>
+      <div class="box">
+        <img src="./img/back3.jpg" alt="">
+      </div>
+
+    </div>
+  </div>
+
+  <button id="slide-btn-1">1</button>
+  <button id="slide-btn-2">2</button>
+  <button id="slide-btn-3">3</button>
+
+  <script>
+    for(let i = 1; i <= 3; i++){
+      document.getElementById('slide-btn-${i}').addEventListener('click', function(){
+        document.querySelector('.slider-img').classList.remove('slider-1', 'slider-2', 'slider-3')
+        document.querySelector('.slider-img').classList.add('slider-btn-${i}')
+      })
+    }
+
+    // document.getElementById('slide-btn-1').addEventListener('click', function(){
+    //   document.getElementById('slider-box').classList.remove('slider-3')
+    //   document.getElementById('slider-box').classList.remove('slider-2')
+    //   document.getElementById('slider-box').classList.add('slider-1')
+    // })
+    // document.getElementById('slide-btn-2').addEventListener('click', function(){
+    //   document.getElementById('slider-box').classList.remove('slider-1')
+    //   document.getElementById('slider-box').classList.remove('slider-3')
+    //   document.getElementById('slider-box').classList.add('slider-2')
+    // })
+
+    // document.getElementById('slide-btn-3').addEventListener('click', function(){
+    //   document.getElementById('slider-box').classList.remove('slider-1')
+    //   document.getElementById('slider-box').classList.remove('slider-2')
+    //   document.getElementById('slider-box').classList.add('slider-3')
+    // })
+  </script>
+</body>
+</html>
