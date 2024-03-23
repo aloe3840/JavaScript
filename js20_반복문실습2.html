@@ -31,15 +31,15 @@
       width: 100%;
     }
 
-    .slider-1{
+    .slider-page-1{
       margin-left: 0;
     }
 
-    .slider-2{
+    .slider-page-2{
       margin-left: -100%;
     }
 
-    .slider-3{
+    .slider-page-3{
       margin-left: -200%;
     }
   </style>
@@ -69,9 +69,9 @@
 
   <script>
     for(let i = 1; i <= 3; i++){
-      document.getElementById('slide-btn-${i}').addEventListener('click', function(){
-        document.querySelector('.slider-img').classList.remove('slider-1', 'slider-2', 'slider-3')
-        document.querySelector('.slider-img').classList.add('slider-btn-${i}')
+      document.getElementById(`slide-btn-${i}`).addEventListener('click', function(){
+        document.getElementById('slider-box').classList.remove('slider-page-1', 'slider-page-2', 'slider-page-3')
+        document.getElementById('slider-box').classList.add(`slider-page-${i}`)
       })
     }
 
