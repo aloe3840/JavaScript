@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스크롤</title>
+
+  <style>
+    body{
+      margin: 0;
+    }
+
+    .container-content{
+      height: 800px;
+      background-color: rgb(252, 252, 234);
+      border: 2px solid black;
+    }
+
+    .container-nav{
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      border: 1px solid black;
+      background-color:lightgoldenrodyellow;
+      z-index: 5;
+      position: fixed;  /*내 화면을 따라다니게*/
+      width: 100%;
+      box-sizing: border-box;
+      height: 80px;
+    }
+
+    .container-nav h3{
+      font-size: 24px;
+    }
+
+    .container-nav li{
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    .container-nav a{
+      text-decoration: none;
+      color: black ;
+    }
+
+    .stiky-box{
+      width: 100px;
+      height: 100px;
+      background-color: black;
+      color: white;
+      position: sticky;
+      top: 100px;
+      left: 70%;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container-nav">
+    <h3>로고</h3>
+    <ul>
+      <li><a href="#">홈</a></li>
+      <li><a href="#">소개</a></li>
+    </ul>
+  </div>
+
+  <div style="height: 60px;"></div>
+
+  <div class="container-content">
+    <div class="stiky-box">스티커</div>
+  </div>
+  
+  <div class="container-content">
+    <div class="stiky-box">스티커</div>
+  </div>
+  
+  <div class="container-content">
+    <div class="stiky-box">스티커</div>
+  </div>
+
+
+  <script>
+    var ff = 0
+    document.querySelector('.container-nav h3').style.fontSize = '24px'
+    window.addEventListener('scroll', function(){
+      console.log(window.scrollY)
+      ff = window.scrollY
+      if(ff < 200){
+        document.querySelector('.container-nav h3').style.fontSize = '24px'
+      } else{
+        document.querySelector('.container-nav h3').style.fontSize = '20px'
+      }
+    })
+  </script>
+</body>
+</html>

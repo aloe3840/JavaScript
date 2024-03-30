@@ -1,0 +1,187 @@
+body{
+  margin: 0;
+  font-family: '나눔';
+  background-color: black;
+}
+
+@font-face{
+  font-family: '나눔';
+  scr: url(./NanumSquare-master.zip)
+}
+
+div, input, textarea{
+  box-sizing: border-box;
+}
+
+.top-nav{
+  background-color: rgb(246, 245, 239);
+}
+
+.top-nav-inner{
+  width: 1100px;
+  height: 120px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.first-nav li{
+  display: inline-block;
+  padding: 0 15px;
+  border-right: 1px solid lightgray;
+  
+}
+
+.first-nav ul li:nth-child(4) {
+  border-right: none; 
+}
+
+.first-nav{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.first-nav a{
+  text-decoration: none;
+  color: rgb(32, 32, 32);
+  font-size: 14px;
+}
+
+.first-nav a:hover{
+  text-decoration: underline;
+}
+
+.first-nav button{
+  background-color: white;
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
+  border: 0.5px solid lightgray;
+}
+
+.second-nav{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.second-nav li{
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.second-nav a{
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  padding: 0 20px 30px 20px;
+}
+
+.second-nav a:hover{
+  text-decoration: underline;
+  color: green;
+  background-color:rgb(44, 42, 41);
+  padding: 10px 20px 40px 20px;
+}
+
+.down-nav {
+  background-color: rgb(44, 42, 41);
+  width: 100%;
+  transition: all 0.5s;
+  height: 0;
+  visibility: hidden;
+}
+
+.down-nav-inner{
+  width: 1100px;
+  margin: auto;
+  background-color: rgb(44, 42, 41);
+  color: white;
+  display: flex;
+  padding: 15px;
+  height: 32vh;
+}
+
+.down-nav ul{
+  margin: 0;
+  padding: 0;
+}
+
+.down-nav li{
+  list-style-type: none;
+  font-size: small;
+}
+
+.dump{
+  height: 120px;
+}
+
+.ads{
+  position: fixed;
+  background-image: url(./img/ads2.PNG);
+  width: 130px;
+  height: 90px;
+  border-radius: 8px;
+  z-index: 5;
+  top: 16%;
+  left: 80%;
+  
+}
+
+nav{
+  position: fixed;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+}
+
+.section-1{
+  width: 100%;
+  height: 32vw;
+  background-image: url(./img/background1.PNG);
+  background-position: center;
+  background-size: 100% auto;    /*cover*/
+  position: relative;
+}
+
+.section-2{
+  width: 100%;
+  height: 32vw;
+  background-image: url(./img/background2.PNG);
+  background-position: center;
+  background-size: 100% auto;    /*cover*/
+}
+
+.section-3{
+  width: 100%;
+  height: 32vw;
+  background-image: url(./img/background3.PNG);
+  background-position: center;
+  background-size: 100% auto;    /*cover*/
+}
+
+.section-4{
+  width: 100%;
+  height: 32vw;
+  background-image: url(./img/background4.PNG);
+  background-position: center;
+  background-size: 100% auto;    /*cover*/
+}
+
+.section-5{
+  width: 100%;
+  height: 32vw;
+  background-image: url(./img/background5.PNG);
+  background-position: center;
+  background-size: 100% auto;    /*cover*/
+}
+
+.section-6{
+  width: 100%;
+  height: 32vw;
+  background-image: url(./img/background6.PNG);
+  background-position: center;
+  background-size: 100% auto;    /*cover*/
+}
+

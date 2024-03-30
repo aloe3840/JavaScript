@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 실습</title>
+
+  <style>
+    body{
+      margin: 0;
+    }
+
+    .product-container{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .product{
+      border: 1px solid blue;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .product img{
+      width: 150px;
+      height: 100px;
+    }
+
+    .product button{
+      background-color: white;
+      border: 0.5px solid blue;
+      border-radius: 4px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="product-container">
+    <div class="product">
+      <img src="img/dog1.jpg" alt="...">
+      <div class="product-content">
+        <h3>상품명</h3>
+        <p>가격: 0000원</p>
+        <button>결제하기</button>
+      </div>
+    </div>
+  
+    <div class="product">
+      <img src="img/dog2.jpg" alt="...">
+      <div class="product-content">
+        <h3>상품명</h3>
+        <p>가격: 0000원</p>
+        <button>결제하기</button>
+      </div>
+      </div>
+  
+    <div class="product">
+      <img src="img/dog3.jpg" alt="...">
+      <div class="product-content">
+        <h3>상품명</h3>
+        <p>가격: 0000원</p>
+        <button>결제하기</button>
+      </div>
+      </div>
+</div>
+
+
+  <script>
+    var 상품정보 = [
+      {"상품명": "아메리카노", "가격": 3000},
+      {"상품명": "카페라떼", "가격": 4500},
+      {"상품명": "주스", "가격": 4000}
+    ]
+
+    var 상품갯수 = document.querySelectorAll('.product').length
+    for(let i=0; i<상품갯수; i++){
+      document.querySelectorAll('.product-content h3')[i].innerHTML = 상품정보[i]["상품명"]
+      document.querySelectorAll('.product-content p')[i].innerHTML = '가격:' + 상품정보[i]["가격"] + '원'
+    }
+
+  </script>
+</body>
+</html>
