@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>?와 ??</title>
+</head>
+<body>
+  <script>
+    // ? :
+    var obj = {}
+    console.log(obj.name?.lastName)  //에러발생
+    console.log('안녕')   //실행X
+
+    // ?? :
+    var name;
+    let 결과값 = name ?? "대체값"
+    console.log(결과값)
+
+
+
+  </script>
+</body>
+</html>

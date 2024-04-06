@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="get-img">이미지를 가져온다</button>
+  <img id="set-img" src="" alt="...">
+
+  <script>
+    document.getElementById('get-img').addEventListener('click', function(){
+      //Math.random = 0부터 랜덤
+      var 이미지주소 = 'https://picsum.photo/500?r=' + Math.random()
+      //이미지가 다 로딩되기 전까지 기다릴 거니까 프라미스 사용
+      var loader = new Promise(function(resolve, reject){
+        var 이미지 = document.getElementById('set-img').src = 이미지주소
+        document.getElementById('set-img').onload = function(){
+          resolve()
+        } 
+
+        document.getElementById('set-img').onload = function(){
+          reject()
+        }
+      })
+
+      loader.then(function(){
+        alert('이미지로딩 성공')
+      }).then(function(){
+        console.log('이미지로딩에 성공하였습니다')
+      }).catch(function(){
+        console.log('이미지 로딩에 실패하였습니다')
+      })
+    })
+  </script>
+</body>
+</html>

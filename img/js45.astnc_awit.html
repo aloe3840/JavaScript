@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="get-img">이미지 가져오기</button>
+  <img id="set-img" src="" alt="...">
+
+  <script>
+    document.getElementById('get-img').addEventListener('click', async function(){
+      try {
+        const response = await fetch('https://picsum.photos/500?r=' + Math.random());
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const blob = await response.blob();
+        const imageUrl = URL.createObjectURL(blob);
+        document.getElementById('set-img').src = imageUrl;
+      } catch (networkError) {
+        console.error('사진을 가져오는데 에러가 발생했습니다', networkError);
+      }
+    });
+
+    document.getElementById('get-img').addEventListener('click', 사이트에서가져오기)
+    
+    async function 사이트에서가져오기(){
+      let 응답 = await fetch('https://httpbin.org/get')
+      if(응답.ok){
+        let date = 응답.text()
+        document.getElementById('get-img').innerHTML = 파일내용
+      }
+    }
+  </script>
+</body>
+</html>
