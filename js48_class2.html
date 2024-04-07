@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <script>
+    //클래스: 변수와 함수의 묶음
+    //클래스의 용도: new로 찍어내기 위함
+    class 클래스{
+      constructor(){
+        this.변수1 = 0
+        this.변수2 = '값'   //this. : 클래스의 변수로 생성
+      }
+      함수1(){
+        console.log('메서드입니다')
+      }
+    }
+
+
+    class 사람{
+      constructor(이름, 나이){
+        this.이름 = 이름
+        this.나이 = 나이
+      }
+      인사하기(){
+        console.log(`안녕하세요 ${this.이름} 입니다.`) 
+        //this를 붙이면 클래스의 변수 
+        //안붙이면 인사하기 안에서 만든 변수
+      }
+    }
+
+    var 이순신 = new 사람('이순신', 33)
+    var 김유신 = new 사람('김유신', 22)
+    var 유관순 = new 사람('유관순', 23)
+
+    이순신.인사하기()
+    김유신.인사하기()
+
+    
+  </script>
+</body>
+</html>
